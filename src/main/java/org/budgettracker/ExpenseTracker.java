@@ -19,7 +19,8 @@ public class ExpenseTracker {
     public double getMonthIncome() {
         double sum = 0;
         for (Transaction t : transactions) {
-            if (t.getType().equalsIgnoreCase("Income")) {
+            // if 1 flag as income
+            if (t.getType() == 1) {
                 sum += t.getAmount();
             }
         }
@@ -29,7 +30,8 @@ public class ExpenseTracker {
     public double getTotalExpenses() {
         double sum = 0;
         for (Transaction t : transactions) {
-            if (t.getType().equalsIgnoreCase("Expense")) {
+            // 2 flagged as expense
+            if (t.getType() == 2) {
                 sum += t.getAmount();
             }
         }

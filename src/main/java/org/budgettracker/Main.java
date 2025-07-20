@@ -1,15 +1,15 @@
 package org.budgettracker;
-//  This is temp main to test code funtionality
+//  This is temp main to test code functionality
 public class Main {
     public static void main(String[] args) {
 
         ExpenseTracker tracker = new ExpenseTracker();
 
         //test insert data
-        tracker.addTransaction(new Transaction("Income", "Job", 4500, "Total month income"));
-        tracker.addTransaction(new Transaction("Expense", "Rent", 1000, "Rent"));
-        tracker.addTransaction(new Transaction("Expense", "Food", 300, "Monthly grocery's"));
-        tracker.addTransaction(new Transaction("Expense", "Internet", 60, "internet bill"));
+        tracker.addTransaction(new Transaction((short) 1, "Job", 4500, "Total month income"));
+        tracker.addTransaction(new Transaction((short) 2, "Rent", 1000, "Rent"));
+        tracker.addTransaction(new Transaction((short) 2, "Food", 300, "Monthly grocery's"));
+        tracker.addTransaction(new Transaction((short) 2, "Internet", 60, "internet bill"));
 
         System.out.printf("Monthly Income : %.2f\n", tracker.getMonthIncome());
         System.out.printf("Monthly Expenses : %.2f\n", tracker.getTotalExpenses());
@@ -21,6 +21,8 @@ public class Main {
             System.out.println("[" + t.getId() + "] " + t.getType() + " - " + t.getCategory() + " - $" + t.getAmount() + " | " + t.getDescription()
             );
         }
+
+        System.out.println("Remaining: " + tracker.getRemainingBalance());
 
     }
 }

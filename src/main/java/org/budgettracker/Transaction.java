@@ -2,14 +2,14 @@ package org.budgettracker;
 
 public class Transaction  {
     private int id;
-    private String type; //name of different expenses
-    private String category; //types of expenses
+    private short  type; // income or expense, 1 for income 2 for expenses
+    private String category; //types of expenses, essential, recreation, ect.
     private double amount;
     private String description;
     private static int nextId = 1;
 
     //constructor
-    public Transaction (String type, String category, double amount, String description) {
+    public Transaction (short type, String category, double amount, String description) {
         this.id = nextId++;
         this.type = type;
         this.category = category;
@@ -21,7 +21,7 @@ public class Transaction  {
     public int getId() {
         return id;
     }
-    public String getType() {
+    public int getType() {
         return type;
     }
     public String getCategory() {
