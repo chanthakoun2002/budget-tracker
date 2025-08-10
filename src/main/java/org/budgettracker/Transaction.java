@@ -1,5 +1,9 @@
 package org.budgettracker;
 
+// This class is for the creation of tranaction objs and should all be filled
+// and stored in expense class array as single object
+// each obj is given a unique ID that increments from the last id
+
 public class Transaction  {
     private int id;
     private short  type; // income or expense, 1 for income 2 for expenses
@@ -16,6 +20,14 @@ public class Transaction  {
         this.amount = amount;
         this.description = description;
 
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public int getId() {
